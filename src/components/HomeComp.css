@@ -1,0 +1,11 @@
+.home__container {
+  background-color: #ececec;
+}
+.home__image {
+  width: 100%;
+}
+.home__row {
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+}
