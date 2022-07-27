@@ -1,0 +1,16 @@
+.subtotal {
+  background-color: #ececec;
+  border-radius: 8px;
+  padding: 6%;
+  border: solid;
+  border-width: 1px;
+  border-color: #d6d6d6;
+}
+
+.checkout__button {
+  margin-top: 16px;
+  background-color: #ff9f00;
+  border: none;
+  padding: 8px 25px;
+  font-weight: 800;
+}

@@ -1,0 +1,17 @@
+.checkout__ads {
+  width: 100%;
+}
+.checkout {
+  display: flex;
+  flex-direction: row;
+}
+
+.checkout__left {
+  margin-right: 16px;
+  flex: 4;
+}
+
+.checkout__right {
+  padding: 8px;
+  flex: 1;
+}
