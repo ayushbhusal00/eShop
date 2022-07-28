@@ -21,7 +21,7 @@ function ProductComp({ id, title, price, rating, imageURL, altImage }) {
   };
 
   return (
-    <div className="product">
+    <div className="product" key={id}>
       <div className="product__info">
         <p>{title}</p>
         <p className="product__price">{price}</p>

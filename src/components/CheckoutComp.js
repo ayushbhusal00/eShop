@@ -2,8 +2,11 @@ import React from "react";
 import "./CheckoutComp.css";
 import CheckoutProduct from "./CheckoutProduct";
 import SubtotalComp from "./SubtotalComp";
+import { useStateValue } from "../StateProvider";
 
 function CheckoutComp() {
+  /* eslint-disable no-unused-vars */
+  const [{ basket }, dispatch] = useStateValue();
   return (
     <div className="checkout">
       <div className="checkout__left">
@@ -14,8 +17,18 @@ function CheckoutComp() {
         />
         <div className="checkout__products">
           <h2 className="checkout__title"></h2>
-          <CheckoutProduct />
-          <CheckoutProduct />
+          {basket.map((item) => {
+            return (
+              <CheckoutProduct
+                id={item.id}
+                title={item.title}
+                price={item.price}
+                rating={item.rating}
+                imageURL={item.imageURL}
+                altImage={item.altImage}
+              />
+            );
+          })}
         </div>
       </div>
       <div className="checkout__right">
