@@ -6,6 +6,8 @@ import SearchIcon from "@mui/icons-material/Search";
 import { Link } from "react-router-dom";
 
 function HeaderComp() {
+  /* eslint-disable no-unused-vars */
+
   return (
     <div className="header">
       <Link to="/" className="RouterLink">

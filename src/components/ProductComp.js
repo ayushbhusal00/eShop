@@ -1,7 +1,9 @@
 import React from "react";
 import "./ProductComp.css";
 
-function ProductComp({ title, price, rating, imageURL, altImage }) {
+function ProductComp({ id, title, price, rating, imageURL, altImage }) {
+  /* eslint-disable no-unused-vars */
+
   return (
     <div className="product">
       <div className="product__info">
