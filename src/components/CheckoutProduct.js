@@ -1,22 +1,31 @@
 import React from "react";
 import "./CheckoutProduct.css";
+import { useStateValue } from "../StateProvider";
 
-function CheckoutProduct() {
+function CheckoutProduct({ id, title, price, rating, imageURL, altImage }) {
+  /* eslint-disable no-unused-vars */
+  const [{ basket }, dispatch] = useStateValue();
+
+  const removeFromBasket = () => {
+    dispatch({
+      type: "REMOVE_FROM_BASKET",
+      id: id,
+    });
+  };
+
   return (
-    <div className="checkout__product">
-      <img
-        src="https://m.media-amazon.com/images/I/81WCYxxv0ML._AC_SL1365_.jpg"
-        alt="insulation-thurmus-bag"
-        className="checkout__product__image"
-      />
+    <div className="checkout__product" key={id}>
+      <img src={imageURL} alt={altImage} className="checkout__product__image" />
       <div className="checkout__product__info">
-        <p>
-          Insulated Lunch Bag for Men/Womens, Lunch Box,Upgraded version Double
-          Deck (Black-1)
-        </p>
-        <p className="checkout__product__price">12.5</p>
-        <div className="checkout__product__rating">⭐⭐⭐</div>
-        <button className="checkout__product__addToCart">Add to cart</button>
+        <p>{title}</p>
+        <p className="checkout__product__price">{price}</p>
+        <div className="checkout__product__rating">{rating}⭐⭐⭐</div>
+        <button
+          className="checkout__product__addToCart"
+          onClick={removeFromBasket}
+        >
+          Remove from cart
+        </button>
       </div>
     </div>
   );
